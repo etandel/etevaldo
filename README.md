@@ -1,5 +1,17 @@
 Etevaldo is an IRC bot written in Lua by Elias Tandel Barrionovo.
 
+# 1) Instalation
+
+Etevaldo runs on [Lua][www.lua.org] version 5.1, though it should probably run on 5.2 as well, but it wasn't tested yet. Apart from the interpreter, Etevaldo has only one dependecy: [LuaSocket][http://w3.impa.br/~diego/software/luasocket/], which is avaliable through [LuaRocks][http://luarocks.org/].
+
+It means that installing Etevaldo is simply installing Lua 5.1 and LuaSocket. Then, to run, just do 'lua client.lua' and it should run smoothly.
+
+# 2) Customization and Aditional Notes
+
+As of now, Etevaldo only supports customization through changing of source code. Future releases should improve this by supporting little configuration scripts.
+
+Bugs and comments should be sent to elias.tandel@gmail.com.
+
 
 >"Copyright (C) 2011 Elias Tandel Barrionovo <elias.tandel@gmail.com>
 
