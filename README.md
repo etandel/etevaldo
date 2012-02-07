@@ -13,7 +13,7 @@ As of now, Etevaldo only supports customization through changing of source code.
 Bugs and comments should be sent to elias.tandel@gmail.com.
 
 
->"Copyright (C) 2011 Elias Tandel Barrionovo <elias.tandel@gmail.com>
+>"Copyright (C) 2011 Elias Tandel Barrionovo (elias.tandel@gmail.com)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
