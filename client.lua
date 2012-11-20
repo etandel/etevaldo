@@ -1,6 +1,6 @@
 local irc = require "socket"
 
-local etevaldo = require'etevaldo'
+local etevaldo = require'bot'
 
 local function parse_args()
         local server = arg[1] and arg[1]:match('(.-):') or 'irc.freenode.org'
