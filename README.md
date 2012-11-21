@@ -8,7 +8,7 @@ Etevaldo runs on [Lua](www.lua.org) version 5.1, though it should probably run o
 which is avaliable through [LuaRocks](http://luarocks.org/).  
 
 It means that installing Etevaldo is simply installing Lua 5.1 and LuaSocket. Then, to
-run, just do 'lua client.lua' and it should run smoothly.
+run, just do 'lua main.lua' and it should run smoothly.
 
 2) Customization
 ---
@@ -20,7 +20,13 @@ used to call the script).
 
 For more info, see the existing scripts.
 
-3) Author and License
+3) TODO
+---
+
+* Make nick prefix optional when receiving private commands (i.e. through /msg)
+* Add support for MoonScript
+
+4) Author and License
 ---
 
 Bugs and comments should be sent to elias.tandel@gmail.com.

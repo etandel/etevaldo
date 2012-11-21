@@ -1,5 +1,5 @@
 local etevaldo = {
-    nick = 'Etevaldo' ,
+    nick = 'etevaldo' ,
     realname = 'Etevaldo - A Lua Bot by Elias Barrionovo' ,
     initmodes = ' 0 * ' , --the spaces matter, or else greeting server will fail!
     channel = '#etevaldotst',
@@ -7,10 +7,10 @@ local etevaldo = {
 }
 
 
-etevaldo.scripts = require 'scripts.init'   
+scripts = require 'scripts.init'
 
 local function parse_input(str)
-    -- captures: sender, event, receiver, message
+    -- Ex: nick!~usr@host PRIVMSG #channel :message
     local sndr, event, rec, msg = str:match'^:([_%a]+)!~[_%a]+@[%d%.]+ (%a-) ([#%a]-) :(.*)'
     local command
     if msg and msg:match('^%s*'..etevaldo.nick..' ') then
@@ -25,16 +25,22 @@ local function parse_input(str)
     }
 end
 
-local function dispatch(script, in_table)
-    say(script(etevaldo, in_table))
+local function dispatch(client, script, in_table)
+    local channel
+    if in_table.receiver == etevaldo.nick then
+        channel = in_table.sender
+    else
+        channel = in_table.receiver
+    end
+    client:privmsg(channel, script(etevaldo, in_table))
 end
 
-function etevaldo.exec(input)
+function etevaldo.exec(client, input)
     local in_table = parse_input(input)
     if in_table.event then 
-        local script = etevaldo.scripts[in_table.command]
+        local script = scripts[in_table.command]
         if script then
-            dispatch(script, in_table)
+            dispatch(client, script, in_table)
         end
     end
 end
